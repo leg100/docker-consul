@@ -1,0 +1,30 @@
+consul1:
+  image: leg100/consul-server
+  ports:
+    - 8300:8300
+    - 8400:8400
+    - 8500:8500
+    - 8600:8600
+  command: -bootstrap-expect 3 -client 0.0.0.0
+
+consul2:
+  image: leg100/consul-server
+  ports:
+    - 8300
+    - 8400
+    - 8500
+    - 8600
+  links:
+   - consul1
+  command: -join consul1 -bootstrap-expect 3 -client 0.0.0.0
+
+consul3:
+  image: leg100/consul-server
+  ports:
+    - 8300
+    - 8400
+    - 8500
+    - 8600
+  links:
+   - consul1
+  command: -join consul1 -bootstrap-expect 3 -client 0.0.0.0
