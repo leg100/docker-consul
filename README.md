@@ -1,3 +1,5 @@
+[![](https://badge.imagelayers.io/leg100/consul:latest.svg)](https://imagelayers.io/?images=leg100/consul:latest 'Get your own badge on imagelayers.io')
+
 ## Containers for Hashicorp's Consul
 
 * leg100/consul - barebones, no configuration files included
